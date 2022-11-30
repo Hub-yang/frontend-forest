@@ -9,7 +9,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
       title: 'home',
       icon: '',
     },
-    component: () => import('@/layout/index.vue'),
+    component: () => import('@/layout/HomePage.vue'),
   },
 ]
 

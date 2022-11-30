@@ -13,6 +13,7 @@ export default ({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'), // 把 @ 指向到 src 目录去
+        USE: path.resolve(__dirname, './src/use'),
         UTILS: path.resolve(__dirname, './src/utils'),
         VIEWS: path.resolve(__dirname, './src/views'),
         COMPONENTS: path.resolve(__dirname, './src/components'),
