@@ -12,7 +12,7 @@ export default function () {
     window.addEventListener('scroll', fixNav)
   })
   const fixNav = () => {
-    if (window.scrollY > nav.value.offsetHeight + 150) {
+    if (window.scrollY > nav.value.offsetHeight) {
       navActive.value = true
     } else {
       navActive.value = false

@@ -11,6 +11,29 @@
     margin: 0 auto;
   }
 
+  // test
+  .back {
+    position: fixed;
+    top: 628px;
+    right: 18px;
+    background-color: rgb(219, 219, 219);
+    z-index: 999;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .12);
+    opacity: 0;
+    transition: $com-transition;
+
+    &.active {
+      opacity: 1;
+    }
+
+  }
+
+  // end
+
   // 导航部分
   .nav {
     position: fixed;
@@ -145,6 +168,11 @@
           .logo {
             opacity: .8;
             transition: $com-transition;
+
+            img {
+              height: 40px;
+              width: 40px;
+            }
           }
         }
 
