@@ -10,7 +10,7 @@ import { ElementPlusResolver, VueUseComponentsResolver } from 'unplugin-vue-comp
 import Components from 'unplugin-vue-components/vite'
 // 自动导入vue3的hooks,支持vue, vue-router, vue-i18n, @vueuse/head, @vueuse/core等
 import AutoImport from 'unplugin-auto-import/vite'
-// element plus自动导入（组件+样式）
+// element plus自动导入（组件+样式)
 import ElementPlus from 'unplugin-element-plus/vite'
 
 export default () => {

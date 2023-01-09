@@ -34,12 +34,18 @@
               <div class="card_m">
                 <p class="title">{{ tab.title }}</p>
                 <div class="tags">
-                  <el-tag v-for="(tag, index) in tab.tags" :key="index" :type="handleTagColor(tag)" round>{{
-                      tag
-                  }}</el-tag>
+                  <el-tag v-for="(tag, index) in tab.tags" :key="index" :type="handleTagColor(tag)" round>
+                    {{ tag }}
+                  </el-tag>
                 </div>
-                <el-tooltip :content="tab.content" placement="bottom" effect="dark" :show-arrow="false" :offset="5"
-                  :show-after="300">
+                <el-tooltip
+                  :content="tab.content"
+                  placement="bottom"
+                  effect="dark"
+                  :show-arrow="false"
+                  :offset="5"
+                  :show-after="300"
+                >
                   <p class="des">{{ tab.content }}</p>
                 </el-tooltip>
               </div>
@@ -62,16 +68,13 @@ import useNavFixed from 'USE/useNavFixed.js'
 const { nav, navActive, navList, handleClickNav } = useNavFixed()
 
 const handleTagColor = (tag) => {
-  switch (tag) {
-    case 'js':
-      return 'warning'
-    case 'css':
-      return 'primary'
-    case 'vue':
-      return 'success'
-    default:
-      return ''
+  const type = {
+    js: 'warning',
+    css: 'primary',
+    vue: 'success',
   }
+
+  return Object.keys(type).includes(tag) ? type[tag] : ''
 }
 
 const tabList = ref([
@@ -106,7 +109,7 @@ const tabList = ref([
     title: 'Node.js',
     tags: ['nodejs', 'js'],
     content: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时',
-  }
+  },
 ])
 
 const handleRedirect = (url) => {
