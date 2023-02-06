@@ -3,10 +3,10 @@ export default function () {
   const nav = ref()
   const navActive = ref(false)
   const navList = ref([
-    { id: nanoid(), navName: 'Home', active: true },
-    { id: nanoid(), navName: 'About', active: false },
-    { id: nanoid(), navName: 'Services', active: false },
-    { id: nanoid(), navName: 'Contact', active: false },
+    { id: nanoid(), navName: '首页', active: true },
+    { id: nanoid(), navName: '我的博客', active: false },
+    { id: nanoid(), navName: '个人健身管理系统', active: false },
+    { id: nanoid(), navName: '个人摄影作品集', active: false },
   ])
   onMounted(() => {
     window.addEventListener('scroll', fixNav)
