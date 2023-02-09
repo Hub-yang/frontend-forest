@@ -7,7 +7,10 @@ npm run build
 # cd 到构建输出的目录下 
 cd dist
 
+echo > .nojekyll
+
 git init
+git checkout -B main
 git add -A
 git commit -m 'deploy'
 
