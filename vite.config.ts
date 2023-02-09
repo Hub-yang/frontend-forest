@@ -1,13 +1,13 @@
 import { defineConfig, loadEnv } from 'vite'
 import path from 'path'
-import presets from './presets/presets'
+import presets from './src/presets/presets'
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {
   // 获取环境变量
   const env = loadEnv(mode, process.cwd())
   return defineConfig({
-    base: env.VITE_ENV === 'dev' ? '/' : './',
+    base: env.VITE_ENV === 'dev' ? '/' : '/my-personal-website/',
     plugins: presets(),
     // alias别名设置
     resolve: {
