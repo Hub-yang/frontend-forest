@@ -2,7 +2,7 @@
   <div class="ary_container">
     <!-- 类别分组标题 -->
     <div class="ary_title">{{ title }}</div>
-    <el-row justify="space-between" :gutter="15">
+    <el-row :gutter="15">
       <el-col :span="6" v-for="tab in tabList" :key="tab.id">
         <el-card shadow="hover" :body-style="{ padding: 0 }" @click="handleRedirect(tab.url)">
           <div class="card_main">
@@ -44,15 +44,25 @@
 <script setup>
 defineProps(['title', 'tabList'])
 
-const handleTagColor = (tag) => {
-  const type = {
-    js: 'warning',
-    css: 'primary',
-    vue: 'success',
-  }
-
-  return Object.keys(type).includes(tag) ? type[tag] : ''
+const tagTypes = {
+  js: 'warning',
+  css: 'primary',
+  vue: 'success',
+  // react: '#9bdff9',
 }
+
+const handleTagColor = (tag) => {
+  let keys = Object.keys(tagTypes)
+
+  let curTag = ''
+
+  keys.forEach((item) => {
+    if (tag.indexOf(item) !== -1) curTag = item
+  })
+
+  return tagTypes[curTag] || ''
+}
+
 const handleRedirect = (url) => {
   window.open(url, '_blank')
 }

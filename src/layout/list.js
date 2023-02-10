@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid'
+// 框架与生态
 export const list1 = [
   {
     id: nanoid(),
@@ -172,7 +173,7 @@ export const list1 = [
   //   content: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时',
   // },
 ]
-
+// 打包构建工具
 export const list2 = [
   {
     id: nanoid(),
@@ -239,7 +240,7 @@ export const list2 = [
     content: 'Rome 是一个完整的 JavaScript 工具链，集代码检测、打包、编译、测试等功能于一身',
   },
 ]
-
+// css/组件库
 export const list3 = [
   {
     id: nanoid(),
@@ -270,7 +271,7 @@ export const list3 = [
     url: 'https://element.eleme.cn/#/zh-CN',
     img: 'element.eleme.cn.png',
     title: 'Element',
-    tags: ['element', '组件库', 'vue'],
+    tags: ['element', '组件库', 'vue2'],
     content: 'Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库',
   },
   {
@@ -278,7 +279,7 @@ export const list3 = [
     url: 'https://vant-contrib.gitee.io/vant/#/zh-CN/',
     img: 'vant-contrib.gitee.io/vant.png',
     title: 'Vant',
-    tags: ['vant', '移动端组件库'],
+    tags: ['vant', '移动端组件库', 'vue3'],
     content: '轻量、可定制的移动端 Vue 组件库',
   },
 ]
