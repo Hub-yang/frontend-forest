@@ -7,6 +7,7 @@ export default function () {
     { id: nanoid(), navName: '我的博客', active: false },
     { id: nanoid(), navName: '个人健身管理系统', active: false },
     { id: nanoid(), navName: '个人摄影作品集', active: false },
+    { id: nanoid(), navName: 'GitHub', active: false },
   ])
   onMounted(() => {
     window.addEventListener('scroll', fixNav)
