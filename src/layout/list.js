@@ -282,4 +282,12 @@ export const list3 = [
     tags: ['vant', '移动端组件库', 'vue3'],
     content: '轻量、可定制的移动端 Vue 组件库',
   },
+  {
+    id: nanoid(),
+    url: 'https://www.naiveui.com/zh-CN/os-theme',
+    img: 'www.naiveui.com/zh-CN/os-theme.png',
+    title: 'Naive UI',
+    tags: ['naiveui', '组件库', 'vue3'],
+    content: '一个 Vue 3 组件库，比较完整，主题可调，使用 TypeScript，快',
+  },
 ]

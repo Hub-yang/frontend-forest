@@ -46,9 +46,9 @@ defineProps(['title', 'tabList'])
 
 const tagTypes = {
   js: 'warning',
-  css: 'primary',
+  css: 'danger',
   vue: 'success',
-  // react: '#9bdff9',
+  react: '',
 }
 
 const handleTagColor = (tag) => {
@@ -60,7 +60,7 @@ const handleTagColor = (tag) => {
     if (tag.indexOf(item) !== -1) curTag = item
   })
 
-  return tagTypes[curTag] || ''
+  return tagTypes[curTag] || (tagTypes[curTag] === '' ? '' : 'info')
 }
 
 const handleRedirect = (url) => {
