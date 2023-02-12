@@ -24,10 +24,10 @@ const router: Router = createRouter({
 // 路由守卫
 router.beforeEach((to, from, next) => {
   // 页签标题
-  document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE
-  if (!NProgress.isStarted()) {
-    NProgress.start()
-  }
+  // document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE
+  // if (!NProgress.isStarted()) {
+  //   NProgress.start()
+  // }
   next()
   // if (localStorage.getItem('token')) {
   //   if (to.path === '/login') {
