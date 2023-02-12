@@ -36,6 +36,10 @@
       <cardList title="打包/构建工具" :tabList="tabListTwo"></cardList>
       <cardList title="css/组件库" :tabList="tabListThree"></cardList>
     </main>
+    <!-- 页脚 -->
+    <footer class="footer_container">
+      <span>&#169; Mocheng.shuai 2022 - 2023 </span>
+    </footer>
   </div>
 </template>
 

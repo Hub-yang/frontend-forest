@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
 
 
 .body {
   font-family: 'Open Sans', sans-serif;
   color: #222;
-  padding-bottom: 50px;
   height: auto;
 
   .container {
@@ -152,6 +152,7 @@
       letter-spacing: 2px;
       border-radius: 40px;
       transform: translateY(100px);
+      font-family: 'ZCOOL XiaoWei', sans-serif;
       cursor: pointer;
     }
 
@@ -161,6 +162,7 @@
       font-size: 7vw;
       text-align: center;
       line-height: 0.55em;
+      font-family: 'ZCOOL XiaoWei', sans-serif;
       transform: translateY(-50%);
 
       span:first-child {
@@ -301,5 +303,16 @@
     .el-col {
       margin-top: 20px;
     }
+  }
+
+  .footer_container {
+    min-width: 10vw;
+    background-color: #1f1f1f;
+    margin-top: 50px;
+    padding: 1.5rem 2.5rem;
+    border-top: 1px solid #eaecef;
+    text-align: center;
+    color: #de4f51;
+    user-select: none;
   }
 }
