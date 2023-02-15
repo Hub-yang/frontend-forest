@@ -6,6 +6,7 @@ export default function () {
     let btn = document.getElementById('btn')
     let rocks = document.getElementById('rocks')
     let forest = document.getElementById('forest')
+    let water = document.getElementById('water')
 
     window.addEventListener('scroll', () => {
       let value = window.scrollY
@@ -17,7 +18,8 @@ export default function () {
       bird2.style.left = (value / 50) * -5 + 'px'
       btn.style.marginTop = value * 1.5 + 'px'
       rocks.style.top = value * -0.12 + 'px'
-      forest.style.top = value * 0.25 + 'px'
+      forest.style.top = value * 0.55 + 'px'
+      water.style.top = value * 0.01 + 'px'
     })
   })
 
