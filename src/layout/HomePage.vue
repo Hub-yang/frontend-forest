@@ -13,13 +13,6 @@
         </ul>
       </div>
     </nav>
-    <!-- 
-    <div class="hero">
-      <div class="container">
-        <h1>欢迎来到我的站点--前端资源导航</h1>
-        <p>这里汇聚一些前端必备知识库网站与工具导航，开发查询一站搞定</p>
-      </div>
-    </div> -->
 
     <section class="section">
       <h2 id="text"><span>欢迎来到我的站点</span><br /><span>前端森林</span></h2>
@@ -32,6 +25,7 @@
     </section>
 
     <main class="main_container">
+      <BaseSearchEngine />
       <cardList title="框架与生态" :tabList="tabListOne"></cardList>
       <cardList title="打包/构建工具" :tabList="tabListTwo"></cardList>
       <cardList title="css/组件库" :tabList="tabListThree"></cardList>
@@ -48,6 +42,7 @@ import { list1, list2, list3 } from './list.js'
 import useNavFixed from 'USE/useNavFixed.js'
 import useParallaxRolling from 'USE/useParallaxRolling.js'
 const cardList = defineAsyncComponent(() => import('./cardList.vue'))
+const BaseSearchEngine = defineAsyncComponent(() => import('@/components/BaseSearchEngine.vue'))
 const { nav, navActive, navList, handleClickNav } = useNavFixed()
 const { onMounted } = useParallaxRolling()
 
