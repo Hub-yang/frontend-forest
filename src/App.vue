@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { init } from './plugins/autoload'
 import useGray from '@/use/useGray'
 // Element Plus 设置中文
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
@@ -15,10 +14,6 @@ const locale = zhCn
 
 // 置灰
 const { isGrayTime } = useGray()
-
-onMounted(() => {
-  init()
-})
 </script>
 
 <style lang="scss">

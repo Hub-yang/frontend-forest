@@ -1,6 +1,6 @@
-import initWidget from './testsrc/index'
+import './testsrc/waifu-tips'
 
-export const init = () => {
+function init() {
   // 封装异步加载资源的方法
   function loadExternalResource(url, type) {
     return new Promise((resolve, reject) => {
@@ -22,7 +22,7 @@ export const init = () => {
     })
   }
 
-  // 加载 waifu.css live2d.min.js waifu-tips.js
+  //  加载资源
   if (screen.width >= 768) {
     Promise.all([
       loadExternalResource(new URL('./testsrc/waifu.css', import.meta.url).href, 'css'),
@@ -39,3 +39,5 @@ export const init = () => {
     })
   }
 }
+
+export default init
