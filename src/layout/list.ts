@@ -1,6 +1,18 @@
 import { nanoid } from 'nanoid'
+
+interface List {
+  id: string
+  url: string
+  img: string
+  title: string
+  tags: string[]
+  content?: string
+}
+
+type imgList = List[]
+
 // 框架与生态
-export const list1 = [
+export const list1: imgList = [
   {
     id: nanoid(),
     url: 'https://cn.vuejs.org/',
@@ -289,5 +301,21 @@ export const list3 = [
     title: 'Naive UI',
     tags: ['naiveui', '组件库', 'vue3'],
     content: '一个 Vue 3 组件库，比较完整，主题可调，使用 TypeScript，快',
+  },
+  {
+    id: nanoid(),
+    url: 'https://echarts.apache.org/zh/index.html',
+    img: 'echarts.apache.org/zh.png',
+    title: 'ECharts',
+    tags: ['ECharts', '组件库'],
+    content: '一个基于 JavaScript 的开源可视化图表库',
+  },
+  {
+    id: nanoid(),
+    url: 'https://www.bootcss.com/',
+    img: 'www.bootcss.com.png',
+    title: 'Bootstrap',
+    tags: ['Bootstrap', '框架'],
+    content: '简洁、直观、强悍的前端开发框架，让web开发更迅速、简单',
   },
 ]

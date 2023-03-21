@@ -29,7 +29,6 @@ function loadWidget(config) {
     for (let tool of config.tools) {
       if (tools[tool]) {
         const { icon, callback } = tools[tool]
-        console.log(icon)
         document
           .getElementById('waifu-tool')
           .insertAdjacentHTML('beforeend', `<span id="waifu-tool-${tool}">${icon}</span>`)

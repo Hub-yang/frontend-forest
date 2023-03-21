@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { list1, list2, list3 } from './list.js'
+import { list1, list2, list3 } from './list.ts'
 import useNavFixed from 'USE/useNavFixed.js'
 import useParallaxRolling from 'USE/useParallaxRolling.js'
 const cardList = defineAsyncComponent(() => import('./cardList.vue'))

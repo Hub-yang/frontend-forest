@@ -11,7 +11,7 @@ function isValidKey(key: string | number | symbol, object: object): key is keyof
   return key in object
 }
 
-init()
+// init()
 
 const app = createApp(App)
 // 全局注册elementplus图标组件

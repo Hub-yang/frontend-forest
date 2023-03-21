@@ -6,8 +6,6 @@ import fa_camera_retro from '@fortawesome/fontawesome-free/svgs/solid/camera-ret
 import fa_info_circle from '@fortawesome/fontawesome-free/svgs/solid/circle-info.svg'
 import fa_xmark from '@fortawesome/fontawesome-free/svgs/solid/xmark.svg'
 
-console.log(fa_camera_retro)
-
 import showMessage from './message.js'
 
 function showHitokoto() {
