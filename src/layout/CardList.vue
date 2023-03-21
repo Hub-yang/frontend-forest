@@ -8,7 +8,7 @@
           <div class="card_main">
             <div class="card_l">
               <div class="logo">
-                <img :src="`https://api.iowen.cn/favicon/${tab.img}`" alt="err" />
+                <img :src="`https://api.iowen.cn/favicon/${tab.img}`" :onerror="(e) => imgerror(e)" />
               </div>
             </div>
             <div class="card_m">
@@ -18,14 +18,8 @@
                   {{ tag }}
                 </el-tag>
               </div>
-              <el-tooltip
-                :content="tab.content"
-                placement="bottom"
-                effect="dark"
-                :show-arrow="false"
-                :offset="5"
-                :show-after="300"
-              >
+              <el-tooltip :content="tab.content" placement="bottom" effect="dark" :show-arrow="false" :offset="5"
+                :show-after="300">
                 <p class="des">{{ tab.content }}</p>
               </el-tooltip>
             </div>
@@ -65,6 +59,13 @@ const handleTagColor = (tag) => {
 
 const handleRedirect = (url) => {
   window.open(url, '_blank')
+}
+
+// 图片加载失败的默认行为
+const imgerror = (event) => {
+  const img = event.srcElement;
+  img.src = "/error.ico";
+  img.onerror = null
 }
 </script>
 

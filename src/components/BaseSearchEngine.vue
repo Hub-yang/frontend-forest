@@ -2,27 +2,25 @@
   <!-- 搜索框 -->
   <div class="search_main" :style="{ left: searchMainLeft + 'px' }">
     <el-form @submit="handlerSearch">
-      <el-input placeholder="输入并搜索" type="text" name="word" v-model.trim="keyWord" class="input-with-select">
+      <el-input placeholder="输入并搜索" type="text" name="word" v-model.trim="keyWord">
         <template #prepend>
           <div class="search_icon" @click="showModal = !showModal">
-            <img
-              draggable="false"
-              class="search-icon-img"
-              :src="searchImgList[curIndex].src"
-              :alt="searchImgList[curIndex].alt"
-            />
-            <el-icon><CaretBottom /></el-icon>
+            <img draggable="false" class="search-icon-img" :src="searchImgList[curIndex].src"
+              :alt="searchImgList[curIndex].alt" />
+            <el-icon>
+              <CaretBottom />
+            </el-icon>
           </div>
         </template>
         <template #append>
-          <el-button :icon="isOpen ? ArrowLeftBold : ArrowRightBold" @click="openSearchMain" />
+          <el-button :icon="isOpen ? ArrowLeftBold : switchIcon" @click="openSearchMain" />
         </template>
       </el-input>
     </el-form>
 
     <Teleport to="body">
       <Transition name="modal">
-        <div v-if="showModal" class="modal-mask">
+        <div v-if="showModal" class="modal-mask" @click="showModal = false">
           <div class="search_box">
             <div v-for="(img, index) in searchImgList" key="img.name" @click="closeModel(index)">
               <img draggable="false" class="icon-img" :src="img.src" :alt="img.alt" />
@@ -36,7 +34,7 @@
 </template>
 
 <script setup>
-import { ArrowRightBold, ArrowLeftBold } from '@element-plus/icons-vue'
+import { ArrowRightBold, ArrowLeftBold, Search } from '@element-plus/icons-vue'
 // 搜索框
 const showModal = ref(false)
 const isOpen = ref(false)
@@ -84,6 +82,20 @@ const openSearchMain = () => {
   searchMainLeft.value = searchMainLeft.value == 10 ? -453 : 10
   isOpen.value = !isOpen.value
 }
+
+let timer = null
+const startSwitch = ref(false)
+onMounted(() => {
+  timer = setInterval(() => {
+    startSwitch.value = !startSwitch.value
+  }, 2000)
+})
+onUnmounted(() => {
+  clearInterval(timer)
+})
+const switchIcon = computed(() => {
+  return startSwitch.value ? Search : ArrowRightBold
+})
 </script>
 
 <style scoped lang="scss">
@@ -134,9 +146,11 @@ $base-top: 70px;
   display: flex;
   justify-content: flex-start;
   width: calc(4 * $search-box-size);
+
   div:first-child {
     border-left: 1px solid rgb(243, 243, 243);
   }
+
   div {
     width: $search-box-size;
     height: $search-box-size;
@@ -176,6 +190,7 @@ $base-top: 70px;
   // display: flex;
   transition: opacity 0.3s ease;
 }
+
 .modal-enter-from {
   opacity: 0;
 }
