@@ -64,7 +64,7 @@ const handleRedirect = (url) => {
 // 图片加载失败的默认行为
 const imgerror = (event) => {
   const img = event.srcElement;
-  img.src = "/error.ico";
+  img.src = "/images/error.png";
   img.onerror = null
 }
 </script>

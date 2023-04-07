@@ -89,6 +89,7 @@
     "resolveUnref": true,
     "setActivePinia": true,
     "setMapStoreSuffix": true,
+    "setTitle": true,
     "shallowReactive": true,
     "shallowReadonly": true,
     "shallowRef": true,
