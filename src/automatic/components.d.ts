@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseSearchEngine: typeof import('./../components/BaseSearchEngine.vue')['default']
+    BaseTitleConfig: typeof import('./../components/BaseTitleConfig.vue')['default']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']

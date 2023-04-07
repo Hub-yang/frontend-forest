@@ -8,12 +8,21 @@
 
 <script setup lang="ts">
 import useGray from '@/use/useGray'
+import setTitle from '@/utils/setTitle'
 // Element Plus 设置中文
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 const locale = zhCn
 
 // 置灰
 const { isGrayTime } = useGray()
+
+onMounted(() => {
+  setTitle({
+    enterTitle: 'ヾ(^▽^*)))欢迎回来!',
+    leaveTitle: '(｡í _ ì｡)不要走呀',
+    showPreTitle: false,
+  })
+})
 </script>
 
 <style lang="scss">
