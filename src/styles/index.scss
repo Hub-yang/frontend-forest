@@ -2,3 +2,36 @@
 @import "@/styles/normalize.scss";
 // elementplus暗黑主题
 // @import 'element-plus/theme-chalk/src/dark/css-vars.scss'
+
+
+
+// 滚动条样式
+body {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, .15);
+    -webkit-border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    // background-color:rgba(0,0,0,.28)
+    // -webkit-border-radius:3px
+    border-radius: 0px;
+    background: #2e6a80;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    border-radius: 0px;
+    background: #0085AD;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    // background-color:rgba(0,0,0,.28)
+    // -webkit-border-radius:3px
+  }
+}

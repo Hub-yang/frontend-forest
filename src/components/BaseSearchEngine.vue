@@ -5,8 +5,12 @@
       <el-input placeholder="输入并搜索" type="text" name="word" v-model.trim="keyWord">
         <template #prepend>
           <div class="search_icon" @click="showModal = !showModal">
-            <img draggable="false" class="search-icon-img" :src="searchImgList[curIndex].src"
-              :alt="searchImgList[curIndex].alt" />
+            <img
+              draggable="false"
+              class="search-icon-img"
+              :src="searchImgList[curIndex].src"
+              :alt="searchImgList[curIndex].alt"
+            />
             <el-icon>
               <CaretBottom />
             </el-icon>
