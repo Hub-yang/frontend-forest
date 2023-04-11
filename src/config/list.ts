@@ -186,7 +186,7 @@ export const list1: imgList = [
   // },
 ]
 // 打包构建工具
-export const list2 = [
+export const list2: imgList = [
   {
     id: nanoid(),
     url: 'https://www.webpackjs.com/',
@@ -253,7 +253,7 @@ export const list2 = [
   },
 ]
 // css/组件库
-export const list3 = [
+export const list3: imgList = [
   {
     id: nanoid(),
     url: 'https://ant.design/index-cn',

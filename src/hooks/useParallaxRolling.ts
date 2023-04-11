@@ -11,15 +11,15 @@ export default function () {
     window.addEventListener('scroll', () => {
       let value = window.scrollY
 
-      text.style.top = 35 + (value / 50) * -0.5 + '%'
-      bird1.style.top = (value / 50) * -1.5 + 'px'
-      bird1.style.left = (value / 50) * 2 + 'px'
-      bird2.style.top = (value / 50) * -1.5 + 'px'
-      bird2.style.left = (value / 50) * -5 + 'px'
-      btn.style.marginTop = value * 1.5 + 'px'
-      rocks.style.top = value * -0.12 + 'px'
-      forest.style.top = value * 0.55 + 'px'
-      water.style.top = value * 0.01 + 'px'
+      text!.style.top = 35 + (value / 50) * -0.5 + '%'
+      bird1!.style.top = (value / 50) * -1.5 + 'px'
+      bird1!.style.left = (value / 50) * 2 + 'px'
+      bird2!.style.top = (value / 50) * -1.5 + 'px'
+      bird2!.style.left = (value / 50) * -5 + 'px'
+      btn!.style.marginTop = value * 1.5 + 'px'
+      rocks!.style.top = value * -0.12 + 'px'
+      forest!.style.top = value * 0.55 + 'px'
+      water!.style.top = value * 0.01 + 'px'
     })
   })
 

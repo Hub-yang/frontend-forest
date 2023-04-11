@@ -21,7 +21,7 @@ export default function () {
     }
   }
 
-  const handleClickNav = (id) => {
+  const handleClickNav = (id: string | number) => {
     navList.value.forEach((nav) => {
       nav.active = false
       if (id === nav.id) {
