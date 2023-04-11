@@ -4,6 +4,7 @@ import store from '@/store'
 import router from '@/router'
 import '@/styles/index.scss'
 import * as ELIcon from '@element-plus/icons-vue'
+import 'APlayer/dist/APlayer.min.css';
 // 看板娘
 import init from './plugins/autoload'
 

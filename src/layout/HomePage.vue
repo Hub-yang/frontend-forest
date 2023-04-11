@@ -1,5 +1,7 @@
 <template>
   <div class="body">
+    <!-- 播放器 -->
+    <div id="player"></div>
     <!-- 返回顶部 -->
     <el-backtop :right="30" :bottom="80" :visibility-height="100" />
     <!-- 导航栏 -->
@@ -38,9 +40,12 @@
 </template>
 
 <script setup>
-import { list1, list2, list3 } from './list.ts'
-import useNavFixed from 'USE/useNavFixed.js'
-import useParallaxRolling from 'USE/useParallaxRolling.js'
+import { list1, list2, list3 } from '../config/list.ts'
+import { audioList } from '../config/audioList.ts'
+import useNavFixed from '../hooks/useNavFixed.ts'
+import useParallaxRolling from '../hooks/useParallaxRolling.ts'
+// 播放器
+import APlayer from 'APlayer'
 const cardList = defineAsyncComponent(() => import('./cardList.vue'))
 const BaseSearchEngine = defineAsyncComponent(() => import('@/components/BaseSearchEngine.vue'))
 const { nav, navActive, navList, handleClickNav } = useNavFixed()
@@ -58,6 +63,16 @@ const handlerScroll = () => {
     behavior: 'smooth',
   })
 }
+
+// 播放器
+onMounted(() => {
+  const ap = new APlayer({
+    container: document.getElementById('player'),
+    fixed: true,
+    lrcType: 3,
+    audio: audioList,
+  })
+})
 </script>
 
 <style scoped lang="scss">

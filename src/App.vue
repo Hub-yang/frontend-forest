@@ -7,7 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import useGray from '@/use/useGray'
+import './config/audioList'
+import useGray from '@/hooks/useGray'
 import setTitle from '@/utils/setTitle'
 // Element Plus 设置中文
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
