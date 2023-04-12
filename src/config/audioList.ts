@@ -12,23 +12,28 @@ function autoReading(audioName: string): { name: string, artist: string } {
   }
 }
 
+// 返回绝对路径
+function absPath(path: string): string {
+  return new URL(path, import.meta.url).href
+}
+
+
 // 读取audios文件夹
-const modules = import.meta.glob('../../public/audios/*')
+const modules = import.meta.glob('../assets/audios/*')
 for (const path in modules) {
-  const fileName = path.replace(/..\/..\/public.audios\//, '')
+  const fileName = path.replace(/..\/assets.audios\//, '')
   audioList.push({
     name: autoReading(fileName).name,
     artist: autoReading(fileName).artist,
-    url: path,
+    url: absPath(path),
   })
 }
 
 // 添加歌词与封面
 audioList.forEach((item) => {
-  console.log(item.name)
   if (item.name) {
-    item.cover = `../../public/cover/${item.name}.jpg`
-    item.lrc = `../../public/lrc/${item.name}.lrc`
+    item.cover = absPath(`../assets/cover/${item.name}.jpg`)
+    item.lrc = absPath(`../assets/lrc/${item.name}.lrc`)
   }
 })
 

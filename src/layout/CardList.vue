@@ -18,8 +18,14 @@
                   {{ tag }}
                 </el-tag>
               </div>
-              <el-tooltip :content="tab.content" placement="bottom" effect="dark" :show-arrow="false" :offset="5"
-                :show-after="300">
+              <el-tooltip
+                :content="tab.content"
+                placement="bottom"
+                effect="dark"
+                :show-arrow="false"
+                :offset="5"
+                :show-after="300"
+              >
                 <p class="des">{{ tab.content }}</p>
               </el-tooltip>
             </div>
@@ -63,8 +69,8 @@ const handleRedirect = (url) => {
 
 // 图片加载失败的默认行为
 const imgerror = (event) => {
-  const img = event.srcElement;
-  img.src = "/images/error.png";
+  const img = event.srcElement
+  img.src = '/images/error.png'
   img.onerror = null
 }
 </script>
