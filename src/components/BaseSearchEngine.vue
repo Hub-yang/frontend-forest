@@ -4,7 +4,7 @@
     <el-form @submit="handlerSearch">
       <el-input placeholder="输入并搜索" type="text" name="word" v-model.trim="keyWord">
         <template #prepend>
-          <div class="search_icon" @click="showModal = !showModal">
+          <div class="search_icon">
             <img
               draggable="false"
               class="search-icon-img"
@@ -93,6 +93,11 @@ onMounted(() => {
   timer = setInterval(() => {
     startSwitch.value = !startSwitch.value
   }, 2000)
+
+  const searchEl = document.querySelector('.el-input-group__prepend')
+  searchEl.onclick = () => {
+    showModal.value = !showModal.value
+  }
 })
 onUnmounted(() => {
   clearInterval(timer)
@@ -123,6 +128,10 @@ $base-top: 70px;
     .el-input-group__prepend {
       border-radius: 0 !important;
     }
+  }
+
+  :deep(.el-input-group__prepend) {
+    cursor: pointer;
   }
 
   .search-icon-img {
