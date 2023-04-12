@@ -70,8 +70,9 @@ const handleRedirect = (url) => {
 // 图片加载失败的默认行为
 const imgerror = (event) => {
   const img = event.srcElement
-  img.src = new URL('../../public/images/alt.png', import.meta.url).href
+  img.src = new URL('../../public/error.gif', import.meta.url).href
   img.onerror = null
+  img.classList.add('err')
 }
 </script>
 

@@ -235,9 +235,11 @@
 
         .card_l {
           padding: 0 15px;
+          flex-basis: 70px;
           display: flex;
           justify-content: center;
           align-items: center;
+          overflow: hidden;
 
           .logo {
             opacity: .8;
@@ -246,6 +248,11 @@
             img {
               height: 40px;
               width: 40px;
+
+              &.err {
+                height: 60px;
+                width: 60px;
+              }
             }
           }
         }
