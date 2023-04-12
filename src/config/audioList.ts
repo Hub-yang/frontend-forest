@@ -72,5 +72,4 @@ export const audioList: Audio[] = [
     cover: "http://rszfvyav9.hn-bkt.clouddn.com/covers/%E5%86%8D%E8%A7%81%E6%B7%B1%E6%B5%B7%20%28%E5%BE%AE%E4%BA%AE%E7%9A%84%E7%9E%AC%E9%97%B4%29.jpg",
     lrc: "http://rszfvyav9.hn-bkt.clouddn.com/lrc/%E5%86%8D%E8%A7%81%E6%B7%B1%E6%B5%B7%20%28%E5%BE%AE%E4%BA%AE%E7%9A%84%E7%9E%AC%E9%97%B4%29.lrc"
   },
-
 ] 
