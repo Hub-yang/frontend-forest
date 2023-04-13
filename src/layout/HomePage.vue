@@ -30,7 +30,7 @@
       <BaseSearchEngine />
       <cardList title="框架与生态" :tabList="tabListOne"></cardList>
       <cardList title="打包/构建工具" :tabList="tabListTwo"></cardList>
-      <cardList title="css/组件库" :tabList="tabListThree"></cardList>
+      <cardList title="css框架/组件库" :tabList="tabListThree"></cardList>
     </main>
 
     <!-- 页脚 -->
