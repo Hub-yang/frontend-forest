@@ -72,6 +72,9 @@ onMounted(() => {
     lrcType: 3,
     audio: audioList,
   })
+  if (window.confirm('来首歌听听？')) {
+    console.log(888)
+  }
 })
 </script>
 
