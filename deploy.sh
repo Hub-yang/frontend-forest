@@ -8,6 +8,9 @@ npm run build
 cd dist
 echo > .nojekyll
 
+# 拷贝.github目录和文件
+cp -r ../.github ./
+
 
 git init
 git checkout -B main

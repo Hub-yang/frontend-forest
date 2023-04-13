@@ -11,7 +11,6 @@
     margin: 0 auto;
   }
 
-  // test
   .back {
     position: fixed;
     top: 628px;
@@ -31,8 +30,6 @@
     }
 
   }
-
-  // end
 
   // 导航部分
   .nav {
@@ -226,6 +223,7 @@
 
         .card_l .logo {
           opacity: 1 !important;
+          filter: saturate(150%);
         }
       }
 
