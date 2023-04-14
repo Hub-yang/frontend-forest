@@ -11,7 +11,7 @@ const setTitle = (function () {
   const currentTitle = document.title
   return function (options: Options) {
     const defaultTitle = options.defaultTitle || currentTitle
-    let timer
+    let timer: any
     // 设置默认title
     document.title = defaultTitle
     // 设置进出title
@@ -23,6 +23,7 @@ const setTitle = (function () {
         if (options.showPreTitle) {
           timer = setTimeout(() => {
             document.title = defaultTitle
+            clearTimeout(timer)
           }, 1500)
         }
       }

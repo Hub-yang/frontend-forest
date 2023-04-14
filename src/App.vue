@@ -21,7 +21,7 @@ onMounted(() => {
   setTitle({
     enterTitle: 'ヾ(^▽^*)))欢迎回来!',
     leaveTitle: '(｡í _ ì｡)不要走呀',
-    showPreTitle: false,
+    showPreTitle: true,
   })
 })
 </script>
