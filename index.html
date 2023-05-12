@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/my-personal-website/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>前端森林</title>
-    <style>
-      #load_screen {
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-        background-image: url('./loading.gif');
-        background-repeat: no-repeat;
-        background-size: 160px 120px;
-        background-position: center center;
-        /* background-color: rgba(255, 255, 255, 0.5); */
-      }
-    </style>
-    <script type="module" crossorigin src="/my-personal-website/static/js/index-ab9e7048.js"></script>
-    <link rel="stylesheet" href="/my-personal-website/static/css/index-35f709fc.css">
-    <script type="module">try{import.meta.url;import("_").catch(()=>1);}catch(e){}window.__vite_is_modern_browser=true;</script>
-    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy build because dynamic import or import.meta.url is unsupported, syntax error above should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- 加载占位 -->
-    <div id="load_screen"></div>
-    
-    <script>
-      document.onreadystatechange = loadLoading
 
-      function loadLoading() {
-        if (document.readyState == 'complete') {
-          document.body.removeChild(document.getElementById('load_screen'))
-          // kanbaniang online
-          const script = document.createElement('script')
-          script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'
-          document.body.appendChild(script)
-        }
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/my-personal-website/icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>前端森林</title>
+  <style>
+    #load_screen {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-image: url('./loading.gif');
+      background-repeat: no-repeat;
+      background-size: 160px 120px;
+      background-position: center center;
+      /* background-color: rgba(255, 255, 255, 0.5); */
+    }
+  </style>
+  <script type="module" crossorigin src="/my-personal-website/static/js/index-ab9e7048.js"></script>
+  <link rel="stylesheet" href="/my-personal-website/static/css/index-35f709fc.css">
+  <script type="module">try{import.meta.url;import("_").catch(()=>1);}catch(e){}window.__vite_is_modern_browser=true;</script>
+  <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy build because dynamic import or import.meta.url is unsupported, syntax error above should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- 加载占位 -->
+  <div id="load_screen"></div>
+  
+  <script>
+    document.onreadystatechange = loadLoading
+
+    function loadLoading() {
+      if (document.readyState == 'complete') {
+        document.body.removeChild(document.getElementById('load_screen'))
+        // kanbaniang online
+        const script = document.createElement('script')
+        script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'
+        document.body.appendChild(script)
       }
-    </script>
-    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
-    <script nomodule crossorigin id="vite-legacy-polyfill" src="/my-personal-website/static/js/polyfills-legacy-ee5b3286.js"></script>
-    <script nomodule crossorigin id="vite-legacy-entry" data-src="/my-personal-website/static/js/index-legacy-776bb822.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
-  </body>
+    }
+  </script>
+  <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+  <script nomodule crossorigin id="vite-legacy-polyfill" src="/my-personal-website/static/js/polyfills-legacy-45334e14.js"></script>
+  <script nomodule crossorigin id="vite-legacy-entry" data-src="/my-personal-website/static/js/index-legacy-776bb822.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+</body>
+
 </html>
