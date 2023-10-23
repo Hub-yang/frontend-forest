@@ -1,49 +1,14 @@
-<template>
-  <!-- 搜索框 -->
-  <div class="search_main wobble-ver-left" :style="{ left: searchMainLeft + 'px' }">
-    <el-form @submit="handlerSearch">
-      <el-input placeholder="输入并搜索" type="text" name="word" v-model.trim="keyWord">
-        <template #prepend>
-          <div class="search_icon">
-            <img draggable="false" class="search-icon-img" :src="searchImgList[curIndex].src"
-              :alt="searchImgList[curIndex].alt" />
-            <el-icon>
-              <CaretBottom />
-            </el-icon>
-          </div>
-        </template>
-        <template #append>
-          <el-button :icon="isOpen ? ArrowLeftBold : switchIcon" @click="openSearchMain" />
-        </template>
-      </el-input>
-    </el-form>
-
-    <Teleport to="body">
-      <Transition name="modal">
-        <div v-if="showModal" class="modal-mask" @click="showModal = false">
-          <div class="search_box">
-            <div v-for="(img, index) in searchImgList" key="img.name" @click="closeModel(index)">
-              <img draggable="false" class="icon-img" :src="img.src" :alt="img.alt" />
-              <span>{{ img.name }}</span>
-            </div>
-          </div>
-        </div>
-      </Transition>
-    </Teleport>
-  </div>
-</template>
-
 <script setup>
-
+import { ArrowRightBold, ArrowLeftBold, Search } from '@element-plus/icons-vue'
 onMounted(() => {
   // 监听按钮事件
   window.addEventListener('keydown', function (e) {
-    if (e.key === "Escape" && isOpen.value) {
+    if (e.key === 'Escape' && isOpen.value) {
       openSearchMain()
     }
   })
 })
-import { ArrowRightBold, ArrowLeftBold, Search } from '@element-plus/icons-vue'
+
 // 搜索框
 const showModal = ref(false)
 const isOpen = ref(false)
@@ -111,6 +76,45 @@ const switchIcon = computed(() => {
   return startSwitch.value ? Search : ArrowRightBold
 })
 </script>
+
+<template>
+  <!-- 搜索框 -->
+  <div class="search_main wobble-ver-left" :style="{ left: searchMainLeft + 'px' }">
+    <el-form @submit="handlerSearch">
+      <el-input placeholder="输入并搜索" type="text" name="word" v-model.trim="keyWord">
+        <template #prepend>
+          <div class="search_icon">
+            <img
+              draggable="false"
+              class="search-icon-img"
+              :src="searchImgList[curIndex].src"
+              :alt="searchImgList[curIndex].alt"
+            />
+            <el-icon>
+              <CaretBottom />
+            </el-icon>
+          </div>
+        </template>
+        <template #append>
+          <el-button :icon="isOpen ? ArrowLeftBold : switchIcon" @click="openSearchMain" />
+        </template>
+      </el-input>
+    </el-form>
+
+    <Teleport to="body">
+      <Transition name="modal">
+        <div v-if="showModal" class="modal-mask" @click="showModal = false">
+          <div class="search_box">
+            <div v-for="(img, index) in searchImgList" key="img.name" @click="closeModel(index)">
+              <img draggable="false" class="icon-img" :src="img.src" :alt="img.alt" />
+              <span>{{ img.name }}</span>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
+  </div>
+</template>
 
 <style scoped lang="scss">
 $search-height: 48px;
@@ -241,7 +245,6 @@ $base-top: 70px;
  * ----------------------------------------
  */
 @-webkit-keyframes wobble-ver-left {
-
   0%,
   100% {
     -webkit-transform: translateY(0) rotate(0);
@@ -277,7 +280,6 @@ $base-top: 70px;
 }
 
 @keyframes wobble-ver-left {
-
   0%,
   100% {
     -webkit-transform: translateY(0) rotate(0);

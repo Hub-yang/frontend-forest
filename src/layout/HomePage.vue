@@ -35,7 +35,7 @@
 
     <!-- 页脚 -->
     <footer class="footer_container">
-      <span>&#169; Mocheng.shuai 2022 - 2023 </span>
+      <span>&#169; HuberyYang 2022 - 2023 </span>
     </footer>
   </div>
 </template>
