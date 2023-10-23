@@ -5,12 +5,8 @@
       <el-input placeholder="输入并搜索" type="text" name="word" v-model.trim="keyWord">
         <template #prepend>
           <div class="search_icon">
-            <img
-              draggable="false"
-              class="search-icon-img"
-              :src="searchImgList[curIndex].src"
-              :alt="searchImgList[curIndex].alt"
-            />
+            <img draggable="false" class="search-icon-img" :src="searchImgList[curIndex].src"
+              :alt="searchImgList[curIndex].alt" />
             <el-icon>
               <CaretBottom />
             </el-icon>
@@ -38,6 +34,15 @@
 </template>
 
 <script setup>
+
+onMounted(() => {
+  // 监听按钮事件
+  window.addEventListener('keydown', function (e) {
+    if (e.key === "Escape" && isOpen.value) {
+      openSearchMain()
+    }
+  })
+})
 import { ArrowRightBold, ArrowLeftBold, Search } from '@element-plus/icons-vue'
 // 搜索框
 const showModal = ref(false)
@@ -236,6 +241,7 @@ $base-top: 70px;
  * ----------------------------------------
  */
 @-webkit-keyframes wobble-ver-left {
+
   0%,
   100% {
     -webkit-transform: translateY(0) rotate(0);
@@ -243,28 +249,35 @@ $base-top: 70px;
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
   }
+
   15% {
     -webkit-transform: translateY(-30px) rotate(-6deg);
     transform: translateY(-30px) rotate(-6deg);
   }
+
   30% {
     -webkit-transform: translateY(15px) rotate(6deg);
     transform: translateY(15px) rotate(6deg);
   }
+
   45% {
     -webkit-transform: translateY(-15px) rotate(-3.6deg);
     transform: translateY(-15px) rotate(-3.6deg);
   }
+
   60% {
     -webkit-transform: translateY(9px) rotate(2.4deg);
     transform: translateY(9px) rotate(2.4deg);
   }
+
   75% {
     -webkit-transform: translateY(-6px) rotate(-1.2deg);
     transform: translateY(-6px) rotate(-1.2deg);
   }
 }
+
 @keyframes wobble-ver-left {
+
   0%,
   100% {
     -webkit-transform: translateY(0) rotate(0);
@@ -272,22 +285,27 @@ $base-top: 70px;
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
   }
+
   15% {
     -webkit-transform: translateY(-30px) rotate(-6deg);
     transform: translateY(-30px) rotate(-6deg);
   }
+
   30% {
     -webkit-transform: translateY(15px) rotate(6deg);
     transform: translateY(15px) rotate(6deg);
   }
+
   45% {
     -webkit-transform: translateY(-15px) rotate(-3.6deg);
     transform: translateY(-15px) rotate(-3.6deg);
   }
+
   60% {
     -webkit-transform: translateY(9px) rotate(2.4deg);
     transform: translateY(9px) rotate(2.4deg);
   }
+
   75% {
     -webkit-transform: translateY(-6px) rotate(-1.2deg);
     transform: translateY(-6px) rotate(-1.2deg);
