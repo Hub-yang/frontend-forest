@@ -6,13 +6,13 @@
   "description": "",
   "author": "Hubery Yang",
   "license": "MIT",
-  "homepage": "https://github.com/Hub-yang/my-vue-dev-template#readme",
+  "homepage": "https://github.com/Hub-yang/frontend-forest#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hub-yang/my-vue-dev-template.git"
+    "url": "git+https://github.com/Hub-yang/frontend-forest.git"
   },
   "bugs": {
-    "url": "https://github.com/Hub-yang/my-vue-dev-template/issues"
+    "url": "https://github.com/Hub-yang/frontend-forest.git/issues"
   },
   "scripts": {
     "dev": "vite --open",
