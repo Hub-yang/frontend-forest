@@ -1,17 +1,9 @@
-<template>
-  <el-config-provider :locale="locale">
-    <div id="app" :class="[{ grayAll: isGrayTime }]">
-      <router-view></router-view>
-    </div>
-  </el-config-provider>
-</template>
-
 <script setup lang="ts">
-import './config/audioList'
+// import './config/audioList'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import useGray from '@/hooks/useGray'
 import setTitle from '@/utils/setTitle'
 // Element Plus 设置中文
-import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 const locale = zhCn
 
 // 置灰
@@ -25,6 +17,14 @@ onMounted(() => {
   })
 })
 </script>
+
+<template>
+  <el-config-provider :locale="locale">
+    <div id="app" :class="[{ grayAll: isGrayTime }]">
+      <router-view />
+    </div>
+  </el-config-provider>
+</template>
 
 <style lang="scss">
 .grayAll {

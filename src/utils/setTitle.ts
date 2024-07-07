@@ -1,11 +1,10 @@
 interface Options {
-  defaultTitle?: string,
-  enterTitle: string,
-  leaveTitle: string,
+  defaultTitle?: string
+  enterTitle: string
+  leaveTitle: string
   // 返回后是否重新显示原title
   showPreTitle?: boolean
 }
-
 
 const setTitle = (function () {
   const currentTitle = document.title
@@ -15,11 +14,12 @@ const setTitle = (function () {
     // 设置默认title
     document.title = defaultTitle
     // 设置进出title
-    document.addEventListener("visibilitychange", function () {
+    document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        document.title = options.leaveTitle;
-      } else {
-        document.title = options.enterTitle;
+        document.title = options.leaveTitle
+      }
+      else {
+        document.title = options.enterTitle
         if (options.showPreTitle) {
           timer = setTimeout(() => {
             document.title = defaultTitle
@@ -27,10 +27,8 @@ const setTitle = (function () {
           }, 1500)
         }
       }
-    });
+    })
   }
 })()
 
-
 export default setTitle
-

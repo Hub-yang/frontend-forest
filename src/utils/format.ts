@@ -1,19 +1,15 @@
-export declare interface instanceObject {
-  [key: string]: string;
-}
-
 /**
  * JSON转url参数
  * @param data Json格式数据
- * */
-export const formatJsonToUrlParams = (data: instanceObject) => {
+ */
+export function formatJsonToUrlParams(data: anyKey) {
   return typeof data === 'object'
     ? Object.keys(data)
-        .map((key) => {
-          return `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`;
-        })
-        .join('&')
-    : '';
-};
+      .map((key) => {
+        return `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      })
+      .join('&')
+    : ''
+}
 
-export default formatJsonToUrlParams;
+export default formatJsonToUrlParams

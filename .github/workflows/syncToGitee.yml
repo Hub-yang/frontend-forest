@@ -2,7 +2,7 @@ name: syncToGitee
 on:
   push:
     branches:
-      - gh-pages  # 部署分支
+      - gh-pages # 部署分支
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
@@ -10,11 +10,11 @@ jobs:
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
         with:
-          src: 'github/Hub-yang'  # 源仓库用户名
-          dst: 'gitee/HuberyYang'   # 目标仓库用户名
+          src: github/Hub-yang # 源仓库用户名
+          dst: gitee/HuberyYang # 目标仓库用户名
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} # 获取源仓库私钥
-          dst_token:  ${{ secrets.GITEE_TOKEN }}    # 获取目标仓库token
-          static_list: 'my-personal-website' # 需要同步的仓库
+          dst_token: ${{ secrets.GITEE_TOKEN }} # 获取目标仓库token
+          static_list: my-personal-website # 需要同步的仓库
           force_update: true # 启用 git push -f 强制同步
           debug: true # 启用 debug 开关
 

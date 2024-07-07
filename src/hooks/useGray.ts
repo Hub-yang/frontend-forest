@@ -6,13 +6,13 @@ export default function () {
   })
 
   function setGray() {
-    let date = new Date()
-    let nowMonth = date.getMonth() + 1
-    let nowDate = date.getDate()
-    let now = `${nowMonth}${nowDate}`
+    const date = new Date()
+    const nowMonth = date.getMonth() + 1
+    const nowDate = date.getDate()
+    const now = `${nowMonth}${nowDate}`
 
-    let someTime = ['44', '1213'] // 4月4日· 和 12月13日国家公祭日 选择置灰
-    if (someTime.indexOf(now) > -1) {
+    const someTime = ['44', '1213'] // 4月4日· 和 12月13日国家公祭日 选择置灰
+    if (someTime.includes(now)) {
       isGrayTime.value = true
     }
   }
