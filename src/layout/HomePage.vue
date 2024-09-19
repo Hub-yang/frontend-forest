@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import APlayer from 'APlayer'
+import config from '~/config'
 import useNavFixed from '../hooks/useNavFixed'
 import useParallaxRolling from '../hooks/useParallaxRolling'
-import config from '@/config'
 
 // 播放器
 const cardList = defineAsyncComponent(() => import('./CardList.vue'))
-const BaseSearchEngine = defineAsyncComponent(() => import('@/components/BaseSearchEngine.vue'))
+const BaseSearchEngine = defineAsyncComponent(() => import('~/components/BaseSearchEngine.vue'))
 const { nav: navEl, navActive, navList, handleClickNav } = useNavFixed()
 const { onMounted } = useParallaxRolling()
 

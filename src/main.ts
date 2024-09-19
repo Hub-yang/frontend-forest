@@ -1,9 +1,9 @@
-import { createApp } from 'vue'
 import * as ELIcon from '@element-plus/icons-vue'
+import { createApp } from 'vue'
+import router from '~/router'
+import store from '~/store'
 import App from './App.vue'
-import store from '@/store'
-import router from '@/router'
-import '@/styles/index.scss'
+import '~/styles/index.scss'
 import 'APlayer/dist/APlayer.min.css'
 
 function isValidKey(key: string | number | symbol, object: object): key is keyof typeof object {

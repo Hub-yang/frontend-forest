@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ESNext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
+      "~/*": ["src/*"],
       "@/*": ["src/*"]
     },
     "resolveJsonModule": true,
@@ -17,6 +18,8 @@
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
+    "noEmit": true,
+    "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import useGray from '~/hooks/useGray'
+import setTitle from '~/utils/setTitle'
 // import './config/audioList'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
-import useGray from '@/hooks/useGray'
-import setTitle from '@/utils/setTitle'
 // Element Plus 设置中文
 const locale = zhCn
 

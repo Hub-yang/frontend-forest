@@ -36,7 +36,7 @@ const startSwitch = ref(false)
 onMounted(() => {
   // 监听按钮事件
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen.value || e.key === 'Enter' && !isOpen.value) {
+    if ((e.key === 'Escape' && isOpen.value) || (e.key === 'Enter' && !isOpen.value)) {
       e.preventDefault()
       handleSearchMainOpen()
     }

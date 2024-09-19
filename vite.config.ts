@@ -1,25 +1,24 @@
 import path from 'node:path'
 import process from 'node:process'
-import { defineConfig, loadEnv } from 'vite'
+import legacy from '@vitejs/plugin-legacy'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import legacy from '@vitejs/plugin-legacy'
-import svgLoader from 'vite-svg-loader'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import { ElementPlusResolver, VueUseComponentsResolver } from 'unplugin-vue-components/resolvers'
-import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import ElementPlus from 'unplugin-element-plus/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
+import { ElementPlusResolver, VueUseComponentsResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig, loadEnv } from 'vite'
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // 获取环境变量
   const env = loadEnv(mode, process.cwd())
   return defineConfig({
-    base: '/my-personal-website/',
     plugins: [
-      vue({ include: [/\.vue$/, /\.md$/] }),
+      vue(),
       vueJsx(),
       svgLoader(),
       legacy({
@@ -47,13 +46,8 @@ export default defineConfig(({ mode }) => {
     // alias别名设置
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'), // 把 @ 指向到 src 目录去
-        'USE': path.resolve(__dirname, './src/use'),
-        'UTILS': path.resolve(__dirname, './src/utils'),
-        'VIEWS': path.resolve(__dirname, './src/views'),
-        'COMPONENTS': path.resolve(__dirname, './src/components'),
-        'STORE': path.resolve(__dirname, './src/store'),
-        'API': path.resolve(__dirname, './src/api/modules'),
+        '~': path.resolve(__dirname, './src'),
+        '@': path.resolve(__dirname, './src'),
       },
     },
     // 服务设置
@@ -71,25 +65,16 @@ export default defineConfig(({ mode }) => {
     },
     // build配置
     build: {
+      outDir: 'dist',
       reportCompressedSize: false,
       // 消除打包大小超过500kb警告
       chunkSizeWarningLimit: 2000,
-      minify: 'esbuild',
-      assetsDir: 'static/assets',
-      // 静态资源打包到dist下的不同目录
-      rollupOptions: {
-        output: {
-          chunkFileNames: 'static/js/[name]-[hash].js',
-          entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
-        },
-      },
     },
     // css配置
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "@/styles/variables.scss";`,
+          additionalData: `@import "~/styles/variables.scss";`,
           javascriptEnabled: true,
         },
       },

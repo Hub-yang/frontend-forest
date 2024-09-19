@@ -1,6 +1,6 @@
-import type { RouteRecordRaw, Router } from 'vue-router'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import type { Router, RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
       title: 'home',
       icon: '',
     },
-    component: () => import('@/layout/HomePage.vue'),
+    component: () => import('~/layout/HomePage.vue'),
   },
   {
     path: '/401',
@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: '需要登录',
     },
-    component: () => import('@/views/exception/401.vue'),
+    component: () => import('~/views/exception/401.vue'),
   },
   {
     path: '/404',
@@ -26,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: '非常抱歉,页面走丢了',
     },
-    component: () => import('@/views/exception/404.vue'),
+    component: () => import('~/views/exception/404.vue'),
   },
   {
     path: '/:pathMatch(.*)',
