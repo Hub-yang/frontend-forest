@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies and build # 安装依赖，打包
         run: |
           npx pnpm install
-          npx pnpm run build
+          npx npm run build
 
       - name: Compressed file # 压缩dist目录下文件和目录
         run: |
