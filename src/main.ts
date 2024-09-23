@@ -4,7 +4,7 @@ import router from '~/router'
 import store from '~/store'
 import App from './App.vue'
 import '~/styles/index.scss'
-import 'APlayer/dist/APlayer.min.css'
+import 'aPlayer/dist/APlayer.min.css'
 
 function isValidKey(key: string | number | symbol, object: object): key is keyof typeof object {
   return key in object
